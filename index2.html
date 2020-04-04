@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Clini Smile</title>
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <link rel="stylesheet" href="assets/DataTables/datatables.min.css">
+  <link rel="stylesheet" href="assets/@chenfengyuan/datepicker/dist/datepicker.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-clinic sticky-top primary-background">
+    <button class="navbar-toggler hamberger-sm" type="button"><span class="dark-blue-text"><i
+          class="fas fa-bars fa-2x white-text"></i></span></button>
+    <div class="contain-logo">
+      <img src="./img/logo_nav.png">
+      <p>สาขา โรบินสัน ศรีสมาน</p>
+    </div>
+    <div class="contain-right-nav">
+      <a href="#" class="btn btn-table-sche-doctor">
+        <img src="./img/icons_menu/star.png">
+        <p>ตารางเวรแพทย์</p>
+      </a>
+      <div class="box-user-nav">
+        <div class="d-img-profile-nav">
+          <img src="./img/profile.png">
+        </div>
+        <div class="d-detail-profile-nav">
+          <p>จิติมา อารักขา</p>
+          <p>ทันตแพทย์</p>
+        </div>
+      </div>
+      <a href="#" class="btn btn-logout-nav">
+        <img src="./img/icons/icon-logout.png">
+      </a>
+      <div class="d-flex position-relative">
+        <button class="btn btn-user-nav-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="./img/profile.png">
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#">ออกจากระบบ</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="side-menu primary-background">
+    <div class="side-menu-contain">
+      <div class="side-menu-first">
+        <button class="navbar-toggler btn-hamberger-lg" type="button">
+          <div class="animated-icon1"><span></span><span></span><span></span></div>
+        </button>
+        <ul class="ul-side-menu">
+          <li class="li-side-menu">
+            <a href="#" class="link-side-menu">
+              <div class="link-img">
+                <img src="./img/icons_menu/star.png">
+              </div>
+              <div class="link-text">
+                ลงทะเบียน
+              </div>
+            </a>
+          </li>
+          <li class="li-side-menu">
+            <a href="#" class="link-side-menu active">
+              <div class="link-img">
+                <img src="./img/icons_menu/star_active.png">
+              </div>
+              <div class="link-text">
+                ลงทะเบียน
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="side-menu-second">
+        <div class="box-close-main-menu text-right">
+          <button class="btn btn-close-main-menu">ปิดเมนูหลัก</button>
+        </div>
+        <div class="box-logo">
+          <img src="./img/logo_nav.png">
+        </div>
+        <div class="d-title-second-menu">
+          ขาย
+        </div>
+        <div class="accordion" id="accordion_sidemenu_second">
+          <div>
+            <button class="btn btn-second-menu-lv1" type="button" data-toggle="collapse"
+              data-target="#collapseSecondMenuOne" aria-expanded="true" aria-controls="collapseSecondMenuOne">
+              การขาย
+            </button>
+            <div id="collapseSecondMenuOne" class="collapse show" data-parent="#accordion_sidemenu_second">
+              <div class="contain-list-second-menu">
+                <ul class="ul-second-menu">
+                  <li class="li-second-menu active">
+                    <a href="#">ใบเสนอราคา</a>
+                  </li>
+                  <li class="li-second-menu">
+                    <a href="#">ใบส่งของ</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-second-menu-lv1 collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseSecondMenuTwo" aria-expanded="false" aria-controls="collapseSecondMenuTwo">
+              บัญชีขาย
+            </button>
+            <div id="collapseSecondMenuTwo" class="collapse" data-parent="#accordion_sidemenu_second">
+              <div class="contain-list-second-menu">
+                <ul class="ul-second-menu">
+                  <li class="li-second-menu">
+                    <a href="#">ใบเสนอราคา</a>
+                  </li>
+                  <li class="li-second-menu">
+                    <a href="#">ใบส่งของ</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main class="main-contain">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card-content">
+            <div class="card-content-head">
+              <div class="d-card-content-head">
+                <a href="#"><i class="fas fa-chevron-circle-left mr-2"></i><span>กลับไปหน้าใบเสนอราคา</span></a>
+                <p>เพิ่มใบเสนอราคา</p>
+              </div>
+            </div>
+            <div class="card-content-body">
+              <div class="card-content-section">
+                <div class="form-content mt-2">
+                  <div class="row justify-content-between">
+                    <div class="col-12 mb-3 text-right">เลขที่ใบเสนอราคา : QT000001</div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          ผู้ซื้อ</div>
+                        <div class="col-8">
+                          <select class="form-control ip-clinic">
+                            <option>..</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3 text-right">
+                      <button class="btn btn-status">สถานะ : รออนุมัติ</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-content-section">
+                <div class="form-content mt-2">
+                  <div class="row">
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          ชื้อผู้ซื้อ</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" placeholder="กรุณากรอกข้อมูล">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          ชื่อโปรเจค</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" placeholder="กรุณากรอกข้อมูล">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          วันที่</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" data-toggle="datepicker" placeholder="กรุณาเลือก">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          เบอร์โทรผู้ซื้อ</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" placeholder="กรุณากรอกข้อมูล">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          อีเมลผู้ซื้อ</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" placeholder="กรุณากรอกข้อมูล">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          ครบกำหนด</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" data-toggle="datepicker" placeholder="กรุณาเลือก">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          เลขประจำตัวผู้เสียภาษี</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" placeholder="กรุณากรอกข้อมูล">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          สำนักงานสาขา / เลขที่</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" placeholder="กรุณากรอกข้อมูล">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          ที่อยู่</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" placeholder="กรุณากรอกข้อมูล">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          ซอย</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" placeholder="กรุณากรอกข้อมูล">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          ถนน</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" placeholder="กรุณากรอกข้อมูล">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          เขต</div>
+                        <div class="col-8">
+                          <select class="form-control ip-clinic">
+                            <option selected disabled>กรุณาเลือก</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          แขวง</div>
+                        <div class="col-8">
+                          <select class="form-control ip-clinic">
+                            <option selected disabled>กรุณาเลือก</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          จังหวัด</div>
+                        <div class="col-8">
+                          <select class="form-control ip-clinic">
+                            <option selected disabled>กรุณาเลือก</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          รหัสไปษณีย์</div>
+                        <div class="col-8">
+                          <input class="form-control ip-clinic" placeholder="กรุณากรอกข้อมูล">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          ประเทศ</div>
+                        <div class="col-8">
+                          <select class="form-control ip-clinic">
+                            <option selected disabled>กรุณาเลือก</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-content-section">
+                <div class="form-content mt-2 table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>ลำดับ</th>
+                        <th>รายการ</th>
+                        <th>รายละเอียด</th>
+                        <th>จำนวน</th>
+                        <th>หน่วย</th>
+                        <th>ราคา(บาท)/หน่วย</th>
+                        <th>รวม(บาท)</th>
+                        <th>ผู้บันทึก</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="appendlist">
+                      <tr>
+                        <td>
+                          1
+                        </td>
+                        <td>
+                          <select class="form-control ip-clinic">
+                            <option>.............................................................</option>
+                          </select>
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          2
+                        </td>
+                        <td>
+                          <select class="form-control ip-clinic">
+                            <option>.............................................................</option>
+                          </select>
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          3
+                        </td>
+                        <td>
+                          <select class="form-control ip-clinic">
+                            <option>.............................................................</option>
+                          </select>
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+                          <input class="form-control ip-clinic">
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button class="btn btn-add-form"><i class="fas fa-plus-circle mr-2"></i>เพิ่มรายการ</button>
+                </div>
+              </div>
+              <div class="card-content-section">
+                <div class="form-content mt-2">
+                  <div class="row justify-content-end">
+                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-6 d-flex align-items-center mb-3">
+                          รวมเป็น
+                        </div>
+                        <div class="col-6 d-flex align-items-center justify-content-end mb-3">
+                          0.00 บาท
+                        </div>
+                        <div class="col-6 d-flex align-items-center mb-3">
+                          ส่วนลด <input class="form-control ip-clinic w-auto d-inline mx-2"> %
+                        </div>
+                        <div class="col-6 d-flex align-items-center justify-content-end mb-3">
+                          0.00 บาท
+                        </div>
+                        <div class="col-6 d-flex align-items-center mb-3">
+                          จำนวนเงินหลังหักส่วนลด
+                        </div>
+                        <div class="col-6 d-flex align-items-center justify-content-end mb-3">
+                          0.00 บาท
+                        </div>
+                        <div class="col-6 d-flex align-items-center mb-3">
+                          จำนวนเงินรวม
+                        </div>
+                        <div class="col-6 d-flex align-items-center justify-content-end mb-3">
+                          0.00 บาท
+                        </div>
+                        <div class="col-6 d-flex align-items-center mb-3">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">หักภาษี ณ ที่จ่าย</label>
+                          </div>
+                        </div>
+                        <div class="col-6 d-flex align-items-center justify-content-end mb-3">
+                          <input class="form-control ip-clinic w-auto d-inline mx-2"> %
+                        </div>
+                        <div class="col-6 d-flex align-items-center mb-3">
+                          หักภาษี ณ ที่จ่าย
+                        </div>
+                        <div class="col-6 d-flex align-items-center justify-content-end mb-3">
+                          0.00 บาท
+                        </div>
+                        <div class="col-6 d-flex align-items-center mb-3">
+                          ยอดชำระ
+                        </div>
+                        <div class="col-6 d-flex align-items-center justify-content-end mb-3">
+                          0.00 บาท
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-content-section">
+                <div class="form-content mt-2">
+                  <div class="row">
+                    <div class="col-12 col-md-6 col-xl-8 col-lg-8 mb-3">
+                      <div class="row">
+                        <div
+                          class="col-4 col-xl-2 col-lg-2 d-flex justify-content-start justify-content-md-end align-items-start">
+                          หมายเหตุ</div>
+                        <div class="col-8 col-xl-10 col-lg-10 ">
+                          <textarea class="form-control ip-clinic" rows="5"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                      <div class="row">
+                        <div class="col-4 col-4 d-flex justify-content-start justify-content-md-end align-items-center">
+                          เอกสารแนบ(สำหรับใช้ภายในบริษัท)
+                        </div>
+                        <div class="col-8">
+                          <button class="btn btn-file-picker"><i class="fas fa-paperclip fa-2x"></i> แนบเอกสาร <span class="txt-file-name"></span></button>
+                        </div>
+                        <input type="file" id="doc_upload" class="d-none">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-content-section">
+                <div class="row">
+                  <div class="col-12 text-center text-md-right">
+                    <button class="btn btn-save">บันทึก</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="assets/@chenfengyuan/datepicker/dist/datepicker.min.js"></script>
+<script type="text/javascript" src="assets/@chenfengyuan/datepicker/i18n/datepicker.th-TH.js"></script>
+<script type="text/javascript" src="js/core.js"></script>
+<script type="text/javascript">
+
+</script>
+
+</html>

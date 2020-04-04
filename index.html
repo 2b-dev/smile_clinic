@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Clini Smile</title>
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <link rel="stylesheet" href="assets/DataTables/datatables.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-clinic sticky-top primary-background">
+    <button class="navbar-toggler hamberger-sm" type="button"><span class="dark-blue-text"><i
+          class="fas fa-bars fa-2x white-text"></i></span></button>
+    <div class="contain-logo">
+      <img src="./img/logo_nav.png">
+      <p>สาขา โรบินสัน ศรีสมาน</p>
+    </div>
+    <div class="contain-right-nav">
+      <a href="#" class="btn btn-table-sche-doctor">
+        <img src="./img/icons_menu/star.png">
+        <p>ตารางเวรแพทย์</p>
+      </a>
+      <div class="box-user-nav">
+        <div class="d-img-profile-nav">
+          <img src="./img/profile.png">
+        </div>
+        <div class="d-detail-profile-nav">
+          <p>จิติมา อารักขา</p>
+          <p>ทันตแพทย์</p>
+        </div>
+      </div>
+      <a href="#" class="btn btn-logout-nav">
+        <img src="./img/icons/icon-logout.png">
+      </a>
+      <div class="d-flex position-relative">
+        <button class="btn btn-user-nav-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="./img/profile.png">
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#">ออกจากระบบ</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="side-menu primary-background">
+    <div class="side-menu-contain">
+      <div class="side-menu-first">
+        <button class="navbar-toggler btn-hamberger-lg" type="button">
+          <div class="animated-icon1"><span></span><span></span><span></span></div>
+        </button>
+        <ul class="ul-side-menu">
+          <li class="li-side-menu">
+            <a href="#" class="link-side-menu">
+              <div class="link-img">
+                <img src="./img/icons_menu/star.png">
+              </div>
+              <div class="link-text">
+                ลงทะเบียน
+              </div>
+            </a>
+          </li>
+          <li class="li-side-menu">
+            <a href="#" class="link-side-menu active">
+              <div class="link-img">
+                <img src="./img/icons_menu/star_active.png">
+              </div>
+              <div class="link-text">
+                ลงทะเบียน
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="side-menu-second">
+        <div class="box-close-main-menu text-right">
+          <button class="btn btn-close-main-menu">ปิดเมนูหลัก</button>
+        </div>
+        <div class="box-logo">
+          <img src="./img/logo_nav.png">
+        </div>
+        <div class="d-title-second-menu">
+          ขาย
+        </div>
+        <div class="accordion" id="accordion_sidemenu_second">
+          <div>
+            <button class="btn btn-second-menu-lv1" type="button" data-toggle="collapse"
+              data-target="#collapseSecondMenuOne" aria-expanded="true" aria-controls="collapseSecondMenuOne">
+              การขาย
+            </button>
+            <div id="collapseSecondMenuOne" class="collapse show" data-parent="#accordion_sidemenu_second">
+              <div class="contain-list-second-menu">
+                <ul class="ul-second-menu">
+                  <li class="li-second-menu active">
+                    <a href="#">ใบเสนอราคา</a>
+                  </li>
+                  <li class="li-second-menu">
+                    <a href="#">ใบส่งของ</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-second-menu-lv1 collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseSecondMenuTwo" aria-expanded="false" aria-controls="collapseSecondMenuTwo">
+              บัญชีขาย
+            </button>
+            <div id="collapseSecondMenuTwo" class="collapse" data-parent="#accordion_sidemenu_second">
+              <div class="contain-list-second-menu">
+                <ul class="ul-second-menu">
+                  <li class="li-second-menu">
+                    <a href="#">ใบเสนอราคา</a>
+                  </li>
+                  <li class="li-second-menu">
+                    <a href="#">ใบส่งของ</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main class="main-contain">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card-content">
+            <div class="card-content-head">
+              การขาย / ใบเสนอราคา
+            </div>
+            <div class="card-content-body">
+              <div class="card-content-section">
+                <div class="form-inline">
+                  <input class="form-control ip-clinic ip-search mr-md-2 mb-2 mb-md-0" placeholder="ค้นหา">
+                  <select class="form-control ip-clinic sl-status mb-2 mb-md-0">
+                    <option selected value="0">สถานะทั้งหมด</option>
+                    <option value="1">รอการอนุมัติ</option>
+                    <option value="2">อนุมัติ</option>
+                    <option value="3">ดำเนินการแล้ว</option>
+                    <option value="4">ไม่อนุมัติ</option>
+                  </select>
+                  <a href="#" class="btn btn-add-form ml-auto"><i class="fas fa-plus-circle mr-2"></i>เพิ่มใบเสนอราคา</a>
+                </div>
+              </div>
+              <div class="card-content-section">
+                <div class="table-responsive">
+                  <table class="table table-striped table-hover table-data-table">
+                    <thead>
+                      <tr>
+                        <th>ลำดับที่</th>
+                        <th>วันที่</th>
+                        <th>เลขที่ใบเสนอราคา</th>
+                        <th>ชื่อผู้ซื้อ</th>
+                        <th>ยอดรวม(บาท)</th>
+                        <th>สถานะ</th>
+                        <th>ผู้บันทึก</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option selected value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option selected value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option selected value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option selected value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option selected value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option selected value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option selected value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option selected value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option selected value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option selected value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option selected value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option selected value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option selected value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option selected value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option selected value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option selected value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option selected value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option selected value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option selected value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option selected value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>22/12/61</td>
+                        <td>QT000001</td>
+                        <td>กรุงเทพมหานคร</td>
+                        <td>5,0000.00</td>
+                        <td>
+                          <select class="form-control w-auto mx-auto ip-clinic">
+                            <option value="1">รอการอนุมัติ</option>
+                            <option value="2">อนุมัติ</option>
+                            <option value="3">ดำเนินการแล้ว</option>
+                            <option selected value="4">ไม่อนุมัติ</option>
+                          </select>
+                        </td>
+                        <td>
+                          <p class="tb-name-note">Siriwan</p>
+                          <p class="tb-date-note">(11/01/62, 16:50 น.)</p>
+                        </td>
+                        <td>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-print"></i>
+                          </button>
+                          <button class="btn btn-action-tb">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                          <button class="btn btn-action-tb del">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="js/core.js"></script>
+<script type="text/javascript">
+  $('.table-data-table').DataTable({
+    "dom": '<"top">rt<"bottom"pl><"clear">',
+    "language": {
+      "decimal": "",
+      "emptyTable": "ไม่มีข้อมูลในตาราง",
+      "info": "แสดงรายการ _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+      "infoEmpty": "แสดงรายการ 0 ถึง 0 จาก 0 รายการ",
+      "thousands": ",",
+      "lengthMenu": "แสดง _MENU_ รายการต่อหน้า",
+      "loadingRecords": "กำลังโหลด...",
+      "processing": "กำลังประมวลผล...",
+      "search": "ค้นหา:",
+      "zeroRecords": "ไม่พบข้อมูลที่ตรงกัน",
+      "paginate": {
+        "first": "หน้าแรก",
+        "last": "หน้าสุดท้าย",
+        "next": "ต่อไป",
+        "previous": "ย้อนกลับ"
+      }
+    }
+  });
+</script>
+
+</html>
